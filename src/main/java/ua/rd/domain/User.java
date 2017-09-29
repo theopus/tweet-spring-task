@@ -20,6 +20,15 @@ public class User {
         return id;
     }
 
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", nickname='" + nickname + '\'' +
+                '}';
+    }
+
     public void setId(long id) {
         this.id = id;
     }

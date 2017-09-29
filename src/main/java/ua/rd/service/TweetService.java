@@ -6,7 +6,6 @@ import ua.rd.domain.*;
 /**
  * Created by irina on 24.09.17.
  */
-
 public interface TweetService {
 
     Tweet tweet(User user, @TweetSize String txt);

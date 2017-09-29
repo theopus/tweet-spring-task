@@ -1,5 +1,6 @@
 package ua.rd.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ua.rd.domain.*;
 import ua.rd.repository.TweetRepository;
@@ -7,12 +8,13 @@ import ua.rd.repository.TweetRepository;
 /**
  * Created by irina on 23.09.17.
  */
-@Service
+@Service("tweetService")
 public class TweetServiceImpl implements TweetService {
 
     private final TweetFactory factory;
     private TweetRepository repository;
 
+    @Autowired
     public TweetServiceImpl(TweetFactory factory, TweetRepository repository) {
         this.factory = factory;
         this.repository = repository;

@@ -44,8 +44,8 @@ public class TweetSizePostprocessor implements BeanPostProcessor {
                         checkedArgs[i] = args[i];
                 }
 
-                System.out.println("**TEST**");
-                return method.invoke(bean, args);
+                Object invoke = method.invoke(bean, args);
+                return invoke;
             });
         }
         return bean;
@@ -54,7 +54,7 @@ public class TweetSizePostprocessor implements BeanPostProcessor {
 
     private String checkTweetSize(String txt, int size){
         if (txt.trim().length() > size)
-            throw new TweetSizeException("Lenght of tweet is " + txt.trim().length() + ". (expected not more then " + size + ")");
+            throw new TweetSizeException("Tweet declined. Lenght of tweet is " + txt.trim().length() + ". (expected not more then " + size + ")");
         else return txt.trim();
     }
 }
